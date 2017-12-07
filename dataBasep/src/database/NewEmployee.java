@@ -58,6 +58,7 @@ public class NewEmployee extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(680, 691));
         setLayout(null);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/log.png"))); // NOI18N

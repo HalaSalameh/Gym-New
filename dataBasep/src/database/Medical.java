@@ -37,6 +37,7 @@ public class Medical extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(790, 516));
         setLayout(null);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N

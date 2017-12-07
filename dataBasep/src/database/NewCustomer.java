@@ -52,6 +52,7 @@ public class NewCustomer extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(730, 681));
         setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 3, 24)); // NOI18N

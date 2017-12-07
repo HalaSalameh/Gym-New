@@ -31,7 +31,7 @@ public class DataBase {
     public static void changePanel(JPanel panel,int hight,int width)
     {
         f.setContentPane(panel);
-        System.out.println(panel.size());
+        System.out.println(panel.preferredSize());
         f.setSize(panel.preferredSize());
         f.invalidate();
         f.validate();

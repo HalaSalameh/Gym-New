@@ -38,6 +38,7 @@ public class ClassesProgram extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
 
         setBackground(java.awt.Color.white);
+        setPreferredSize(new java.awt.Dimension(1070, 721));
         setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/Picture111.png"))); // NOI18N

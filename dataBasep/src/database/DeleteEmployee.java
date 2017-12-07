@@ -45,6 +45,7 @@ public class DeleteEmployee extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
 
         setBackground(java.awt.Color.white);
+        setPreferredSize(new java.awt.Dimension(929, 591));
         setLayout(null);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/ضضض.png"))); // NOI18N

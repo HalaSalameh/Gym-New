@@ -37,6 +37,7 @@ public class FinancialRecord extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(770, 691));
         setLayout(null);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
