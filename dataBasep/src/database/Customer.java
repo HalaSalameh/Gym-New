@@ -133,12 +133,12 @@ public class Customer extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(50, 40, 470, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\log.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/log.png"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(390, 0, 146, 90);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 0, 663, 648);
     }// </editor-fold>//GEN-END:initComponents

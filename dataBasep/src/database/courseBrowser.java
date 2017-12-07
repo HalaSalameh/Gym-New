@@ -75,11 +75,11 @@ public class courseBrowser extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(60, 20, 340, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\log.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/log.png"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(390, 0, 146, 89);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 0, 660, 648);
     }// </editor-fold>//GEN-END:initComponents

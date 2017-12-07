@@ -39,7 +39,7 @@ public class FinancialRecord extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\big.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel4);
         jLabel4.setBounds(380, 410, 390, 280);
 
@@ -79,7 +79,7 @@ public class FinancialRecord extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(80, 30, 410, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 10, 470, 648);
     }// </editor-fold>//GEN-END:initComponents

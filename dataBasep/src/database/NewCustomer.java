@@ -51,6 +51,7 @@ public class NewCustomer extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 3, 24)); // NOI18N
@@ -141,11 +142,11 @@ public class NewCustomer extends javax.swing.JPanel {
         add(jTextField5);
         jTextField5.setBounds(140, 360, 250, 20);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\big.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel10);
         jLabel10.setBounds(190, 420, 540, 260);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 0, 660, 648);
 

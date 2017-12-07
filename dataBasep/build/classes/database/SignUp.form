@@ -128,7 +128,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\dell\Downloads\test.png"/>
+          <Image iconType="3" name="/database/test.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -140,7 +140,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\dell\Downloads\big.png"/>
+          <Image iconType="3" name="/database/big.png"/>
         </Property>
       </Properties>
       <Constraints>

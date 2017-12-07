@@ -107,11 +107,11 @@ public class Program extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(90, 20, 470, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 0, 403, 648);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\big.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel3);
         jLabel3.setBounds(360, 380, 330, 260);
     }// </editor-fold>//GEN-END:initComponents

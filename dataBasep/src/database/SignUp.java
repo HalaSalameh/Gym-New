@@ -92,11 +92,11 @@ public class SignUp extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(70, 20, 660, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 0, 396, 648);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\big.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(490, 370, 346, 274);
     }// </editor-fold>//GEN-END:initComponents

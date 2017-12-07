@@ -60,7 +60,7 @@ public class NewEmployee extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\log.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/log.png"))); // NOI18N
         add(jLabel12);
         jLabel12.setBounds(386, 0, 150, 90);
 
@@ -191,7 +191,7 @@ public class NewEmployee extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(50, 20, 340, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, -20, 680, 690);
     }// </editor-fold>//GEN-END:initComponents
