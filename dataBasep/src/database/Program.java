@@ -5,8 +5,6 @@
  */
 package database;
 
-import javax.swing.JPanel;
-
 /**
  *
  * @author dell
@@ -43,7 +41,6 @@ public class Program extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(690, 649));
@@ -57,23 +54,18 @@ public class Program extends javax.swing.JPanel {
             }
         });
         add(jButton3);
-        jButton3.setBounds(400, 570, 60, 40);
+        jButton3.setBounds(370, 563, 60, 40);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Back");
         add(jButton2);
-        jButton2.setBounds(50, 570, 61, 40);
+        jButton2.setBounds(40, 570, 61, 40);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("set new program");
+        jButton1.setText("Previous Program");
         jButton1.setActionCommand("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         add(jButton1);
-        jButton1.setBounds(160, 570, 210, 40);
+        jButton1.setBounds(130, 510, 210, 40);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -118,44 +110,22 @@ public class Program extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 90, 648);
+        jLabel1.setBounds(0, 0, 403, 648);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel3);
         jLabel3.setBounds(360, 380, 330, 260);
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton4.setText("Previous Program");
-        jButton4.setActionCommand("");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        add(jButton4);
-        jButton4.setBounds(160, 520, 210, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        JPanel temp = new newProgram();
-        DataBase.changePanel(temp);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
