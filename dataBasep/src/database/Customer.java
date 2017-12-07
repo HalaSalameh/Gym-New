@@ -224,7 +224,7 @@ public class Customer extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
-       JPanel MembershipPanel = new Membership();
+       JPanel MembershipPanel = new Membership1();
         DataBase.changePanel(MembershipPanel);
     }//GEN-LAST:event_jButton4ActionPerformed
 

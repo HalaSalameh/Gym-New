@@ -98,7 +98,7 @@ public class FinancialRecord extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JPanel MembershipPanel = new Membership();
+        JPanel MembershipPanel = new Membership1();
         DataBase.changePanel(MembershipPanel);
     }//GEN-LAST:event_jButton1ActionPerformed
 
