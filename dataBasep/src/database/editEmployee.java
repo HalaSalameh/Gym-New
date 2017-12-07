@@ -70,7 +70,7 @@ public class editEmployee extends javax.swing.JPanel {
             }
         });
         add(jTextField1);
-        jTextField1.setBounds(240, 110, 240, 22);
+        jTextField1.setBounds(240, 110, 240, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Rank");
@@ -83,7 +83,7 @@ public class editEmployee extends javax.swing.JPanel {
             }
         });
         add(jTextField3);
-        jTextField3.setBounds(240, 150, 240, 22);
+        jTextField3.setBounds(240, 150, 240, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("City");
@@ -96,7 +96,7 @@ public class editEmployee extends javax.swing.JPanel {
             }
         });
         add(jTextField4);
-        jTextField4.setBounds(240, 230, 103, 22);
+        jTextField4.setBounds(240, 230, 103, 20);
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +104,7 @@ public class editEmployee extends javax.swing.JPanel {
             }
         });
         add(jTextField5);
-        jTextField5.setBounds(528, 231, 103, 22);
+        jTextField5.setBounds(528, 231, 103, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Street");
@@ -122,7 +122,7 @@ public class editEmployee extends javax.swing.JPanel {
             }
         });
         add(jTextField6);
-        jTextField6.setBounds(787, 231, 103, 22);
+        jTextField6.setBounds(787, 231, 103, 20);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Abilities");
@@ -214,7 +214,7 @@ public class editEmployee extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1);
-        jComboBox1.setBounds(240, 180, 64, 22);
+        jComboBox1.setBounds(240, 180, 56, 20);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

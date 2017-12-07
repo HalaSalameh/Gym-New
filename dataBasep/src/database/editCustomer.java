@@ -64,7 +64,7 @@ public class editCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField1);
-        jTextField1.setBounds(230, 140, 240, 22);
+        jTextField1.setBounds(230, 140, 240, 20);
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +90,7 @@ public class editCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField3);
-        jTextField3.setBounds(230, 230, 229, 22);
+        jTextField3.setBounds(230, 230, 229, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("City");
@@ -103,7 +103,7 @@ public class editCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField4);
-        jTextField4.setBounds(230, 280, 103, 22);
+        jTextField4.setBounds(230, 280, 103, 20);
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,7 @@ public class editCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField5);
-        jTextField5.setBounds(520, 280, 103, 22);
+        jTextField5.setBounds(520, 280, 103, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Street");
@@ -129,7 +129,7 @@ public class editCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField6);
-        jTextField6.setBounds(780, 280, 103, 22);
+        jTextField6.setBounds(780, 280, 103, 20);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("SAVE");
