@@ -43,6 +43,7 @@ public class Program extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(690, 649));
         setLayout(null);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N

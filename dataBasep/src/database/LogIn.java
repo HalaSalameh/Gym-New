@@ -40,7 +40,6 @@ public class LogIn extends javax.swing.JPanel {
         setBackground(java.awt.Color.white);
         setMaximumSize(new java.awt.Dimension(32767, 32766));
         setMinimumSize(new java.awt.Dimension(32767, 32767));
-        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(789, 495));
         setLayout(null);
 
