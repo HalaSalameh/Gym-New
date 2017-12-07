@@ -29,6 +29,9 @@ public class NewCustomer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -49,13 +52,41 @@ public class NewCustomer extends javax.swing.JPanel {
         jTextField5 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 681));
         setLayout(null);
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setText("Sign Up ");
+        jButton3.setActionCommand("");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3);
+        jButton3.setBounds(60, 430, 140, 25);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(40, 570, 73, 23);
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2.setText("Exit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2);
+        jButton2.setBounds(170, 570, 55, 23);
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 3, 24)); // NOI18N
         jLabel2.setText("New Customer Registration!...............");
@@ -83,19 +114,19 @@ public class NewCustomer extends javax.swing.JPanel {
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton1.setText("Female");
         add(jRadioButton1);
-        jRadioButton1.setBounds(160, 140, 69, 25);
+        jRadioButton1.setBounds(160, 140, 67, 23);
 
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton2.setText("Male");
         add(jRadioButton2);
-        jRadioButton2.setBounds(330, 140, 57, 25);
+        jRadioButton2.setBounds(330, 140, 53, 23);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Email : ");
         add(jLabel5);
         jLabel5.setBounds(60, 190, 80, 15);
         add(jTextField2);
-        jTextField2.setBounds(120, 190, 310, 22);
+        jTextField2.setBounds(120, 190, 310, 20);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Date Of Birth : ");
@@ -116,7 +147,7 @@ public class NewCustomer extends javax.swing.JPanel {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox3);
-        jComboBox3.setBounds(430, 250, 64, 22);
+        jComboBox3.setBounds(430, 250, 56, 20);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("City : ");
@@ -134,16 +165,16 @@ public class NewCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField3);
-        jTextField3.setBounds(120, 310, 130, 22);
+        jTextField3.setBounds(120, 310, 130, 20);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText(" Building : ");
         add(jLabel9);
         jLabel9.setBounds(60, 360, 90, 15);
         add(jTextField4);
-        jTextField4.setBounds(350, 310, 140, 22);
+        jTextField4.setBounds(350, 310, 140, 20);
         add(jTextField5);
-        jTextField5.setBounds(140, 360, 250, 22);
+        jTextField5.setBounds(140, 360, 250, 20);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel10);
@@ -152,27 +183,6 @@ public class NewCustomer extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 0, 660, 648);
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setText("Exit");
-        add(jButton2);
-        jButton2.setBounds(170, 570, 55, 23);
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1);
-        jButton1.setBounds(40, 570, 73, 23);
-
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Sign Up ");
-        jButton3.setActionCommand("");
-        add(jButton3);
-        jButton3.setBounds(60, 430, 140, 25);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -184,10 +194,19 @@ public class NewCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       
         JPanel temp = new empMainScreen();
         DataBase.changePanel(temp); 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       JPanel SignUpFinalPanel = new  SignUpFinal();
+        DataBase.changePanel( SignUpFinalPanel);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       DataBase.exitFrame();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
