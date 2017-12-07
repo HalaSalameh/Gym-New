@@ -104,14 +104,14 @@ public class NewEmployee extends javax.swing.JPanel {
         add(jLabel10);
         jLabel10.setBounds(60, 410, 100, 17);
         add(jTextField5);
-        jTextField5.setBounds(140, 360, 250, 20);
+        jTextField5.setBounds(140, 360, 250, 22);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText(" Building : ");
         add(jLabel9);
         jLabel9.setBounds(60, 360, 90, 15);
         add(jTextField4);
-        jTextField4.setBounds(350, 310, 140, 20);
+        jTextField4.setBounds(350, 310, 140, 22);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Street : ");
@@ -124,7 +124,7 @@ public class NewEmployee extends javax.swing.JPanel {
             }
         });
         add(jTextField3);
-        jTextField3.setBounds(120, 310, 130, 20);
+        jTextField3.setBounds(120, 310, 130, 22);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("City : ");
@@ -133,7 +133,7 @@ public class NewEmployee extends javax.swing.JPanel {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox3);
-        jComboBox3.setBounds(430, 250, 56, 20);
+        jComboBox3.setBounds(430, 250, 64, 22);
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jComboBox2.setMaximumRowCount(31);
@@ -152,7 +152,7 @@ public class NewEmployee extends javax.swing.JPanel {
         add(jLabel6);
         jLabel6.setBounds(60, 250, 100, 15);
         add(jTextField2);
-        jTextField2.setBounds(120, 190, 310, 20);
+        jTextField2.setBounds(120, 190, 310, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Email : ");
@@ -162,12 +162,12 @@ public class NewEmployee extends javax.swing.JPanel {
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton2.setText("Male");
         add(jRadioButton2);
-        jRadioButton2.setBounds(330, 140, 53, 23);
+        jRadioButton2.setBounds(330, 140, 57, 25);
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton1.setText("Female");
         add(jRadioButton1);
-        jRadioButton1.setBounds(160, 140, 67, 23);
+        jRadioButton1.setBounds(160, 140, 69, 25);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Gender : ");

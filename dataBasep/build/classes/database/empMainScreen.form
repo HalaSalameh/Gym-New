@@ -229,7 +229,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="back"/>
+        <Property name="text" type="java.lang.String" value="Sign Out"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
