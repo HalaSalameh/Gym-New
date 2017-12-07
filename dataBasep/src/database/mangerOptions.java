@@ -36,6 +36,7 @@ public class mangerOptions extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
 
         setBackground(java.awt.Color.white);
+        setPreferredSize(new java.awt.Dimension(990, 652));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N

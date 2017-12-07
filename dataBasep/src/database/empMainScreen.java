@@ -47,6 +47,7 @@ public class empMainScreen extends javax.swing.JPanel {
         jButton8 = new javax.swing.JButton();
 
         setBackground(java.awt.Color.white);
+        setPreferredSize(new java.awt.Dimension(1030, 711));
         setLayout(null);
 
         jLabel2.setBackground(java.awt.Color.white);

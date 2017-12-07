@@ -35,6 +35,7 @@ public class SignUpFinal extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(675, 302));
         setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N

@@ -37,6 +37,7 @@ public class courseBrowser extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(660, 649));
         setLayout(null);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -57,7 +58,7 @@ public class courseBrowser extends javax.swing.JPanel {
 
         jLabel5.setText("---------------------------------------------------------------------------------------------------------------------");
         add(jLabel5);
-        jLabel5.setBounds(50, 140, 470, 14);
+        jLabel5.setBounds(50, 140, 470, 16);
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
         jLabel4.setText("Choose Semester : ");
