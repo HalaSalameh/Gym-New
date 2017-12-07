@@ -31,10 +31,14 @@ public class DataBase {
     public static void changePanel(JPanel panel)
     {
         f.setContentPane(panel);
-
         f.setSize(panel.preferredSize());
         f.invalidate();
         f.validate();
+    }
+    
+    public static void exitFrame()
+    {
+        f.dispose();
     }
     
 }
