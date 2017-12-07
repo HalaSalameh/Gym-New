@@ -37,7 +37,7 @@ public class LogIn extends javax.swing.JPanel {
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(java.awt.Color.white);
+        setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(32767, 32766));
         setMinimumSize(new java.awt.Dimension(32767, 32767));
         setPreferredSize(new java.awt.Dimension(789, 495));
@@ -76,6 +76,12 @@ public class LogIn extends javax.swing.JPanel {
         });
         add(jButton1);
         jButton1.setBounds(300, 350, 120, 40);
+
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
         add(jPasswordField1);
         jPasswordField1.setBounds(410, 290, 230, 30);
 
@@ -94,8 +100,12 @@ public class LogIn extends javax.swing.JPanel {
         
         JPanel customerPanel = new Customer();
         System.out.println(customerPanel.size());
-        DataBase.changePanel(customerPanel, 500, 800);
+        DataBase.changePanel(customerPanel);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

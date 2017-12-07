@@ -150,7 +150,7 @@ public class empMainScreen extends javax.swing.JPanel {
         add(jButton5);
         jButton5.setBounds(390, 420, 180, 40);
 
-        jButton6.setText("back");
+        jButton6.setText("Sign Out");
         jButton6.setToolTipText("");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
