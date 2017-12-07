@@ -222,9 +222,6 @@ public class NewEmployee extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-
-   
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JPanel SignUpFinalPanel = new  SignUpFinal();
         DataBase.changePanel( SignUpFinalPanel);
@@ -236,10 +233,13 @@ public class NewEmployee extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
         DataBase.exitFrame();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+
+   
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
