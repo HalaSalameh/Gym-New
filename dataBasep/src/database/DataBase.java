@@ -16,7 +16,6 @@ public class DataBase {
             JPanel logIn  = new LogIn();
 
             f=new JFrame();
-
             f.add(logIn);   
             f.pack();
             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -31,9 +30,9 @@ public class DataBase {
     public static void changePanel(JPanel panel,int hight,int width)
     {
         f.setContentPane(panel);
-       f.setSize(panel.size());
-            f.invalidate();
-          f.validate();
+        f.setSize(panel.size());
+        f.invalidate();
+        f.validate();
     }
     
 }
