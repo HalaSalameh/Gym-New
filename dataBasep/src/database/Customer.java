@@ -5,6 +5,8 @@
  */
 package database;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author dell
@@ -68,9 +70,14 @@ public class Customer extends javax.swing.JPanel {
         jButton7.setBounds(430, 500, 80, 23);
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton6.setText("Back");
+        jButton6.setText("Sign Out ");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         add(jButton6);
-        jButton6.setBounds(40, 500, 80, 23);
+        jButton6.setBounds(40, 500, 140, 23);
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setText("Sign Up For A Class");
@@ -154,6 +161,13 @@ public class Customer extends javax.swing.JPanel {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        
+         JPanel customerPanel = new Customer();
+        System.out.println(customerPanel.size());
+        DataBase.changePanel(customerPanel, 500, 800);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

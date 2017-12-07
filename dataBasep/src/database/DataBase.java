@@ -28,7 +28,7 @@ public class DataBase {
             f.setVisible(true);
     }
     
-    public static void changePanel(JPanel panel,int hight,int width)
+    public static void changePanel(JPanel panel)
     {
         f.setContentPane(panel);
 
