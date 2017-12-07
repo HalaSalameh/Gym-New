@@ -98,7 +98,7 @@ public class LogIn extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        JPanel customerPanel = new empMainScreen();
+        JPanel customerPanel = new Customer();
         System.out.println(customerPanel.size());
         DataBase.changePanel(customerPanel);
     }//GEN-LAST:event_jButton1ActionPerformed

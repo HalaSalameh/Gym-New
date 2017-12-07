@@ -29,6 +29,7 @@ public class Customer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -54,6 +55,16 @@ public class Customer extends javax.swing.JPanel {
         setRequestFocusEnabled(false);
         setLayout(null);
 
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton9.setText("Change Password");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        add(jButton9);
+        jButton9.setBounds(210, 453, 160, 40);
+
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton8.setText("Edit profile");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +83,7 @@ public class Customer extends javax.swing.JPanel {
             }
         });
         add(jButton7);
-        jButton7.setBounds(430, 500, 80, 23);
+        jButton7.setBounds(430, 520, 80, 23);
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton6.setText("Sign Out ");
@@ -82,7 +93,7 @@ public class Customer extends javax.swing.JPanel {
             }
         });
         add(jButton6);
-        jButton6.setBounds(40, 500, 140, 23);
+        jButton6.setBounds(40, 520, 140, 23);
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setText("Sign Up For A Class");
@@ -191,7 +202,6 @@ public class Customer extends javax.swing.JPanel {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         
-
          JPanel LogInPanel = new LogIn();
         DataBase.changePanel(LogInPanel);
 
@@ -213,14 +223,20 @@ public class Customer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      
-        
+
+       JPanel MembershipPanel = new Membership();
+        DataBase.changePanel(MembershipPanel);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         JPanel SignUpPanel = new SignUp();
         DataBase.changePanel(SignUpPanel);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+       JPanel ChangePasswordPanel = new ChangePassword();
+        DataBase.changePanel(ChangePasswordPanel);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -232,6 +248,7 @@ public class Customer extends javax.swing.JPanel {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

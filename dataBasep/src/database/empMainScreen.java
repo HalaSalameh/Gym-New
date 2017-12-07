@@ -89,7 +89,7 @@ public class empMainScreen extends javax.swing.JPanel {
         jLabel7.setBounds(140, 140, 260, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("grnder");
+        jLabel8.setText("gender");
         add(jLabel8);
         jLabel8.setBounds(140, 170, 260, 30);
 
@@ -122,7 +122,7 @@ public class empMainScreen extends javax.swing.JPanel {
         add(jButton2);
         jButton2.setBounds(140, 340, 180, 40);
 
-        jButton3.setText("Serach for Customer");
+        jButton3.setText("Search for Customer");
         jButton3.setToolTipText("");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
