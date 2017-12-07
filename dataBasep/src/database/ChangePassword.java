@@ -38,6 +38,7 @@ public class ChangePassword extends javax.swing.JPanel {
         jPasswordField3 = new javax.swing.JPasswordField();
 
         setBackground(java.awt.Color.white);
+        setPreferredSize(new java.awt.Dimension(760, 261));
         setLayout(null);
 
         jLabel1.setText("confirm Password");

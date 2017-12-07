@@ -32,7 +32,6 @@ public class DataBase {
     {
         f.setContentPane(panel);
 
-        System.out.println(panel.size());
         f.setSize(panel.preferredSize());
         f.invalidate();
         f.validate();

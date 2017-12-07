@@ -49,6 +49,7 @@ public class Customer extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(32767, 32766));
         setMinimumSize(new java.awt.Dimension(32767, 32767));
         setPreferredSize(new java.awt.Dimension(663, 647));
+        setRequestFocusEnabled(false);
         setLayout(null);
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -64,12 +65,12 @@ public class Customer extends javax.swing.JPanel {
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton7.setText("Exit");
         add(jButton7);
-        jButton7.setBounds(430, 500, 55, 23);
+        jButton7.setBounds(430, 500, 80, 23);
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton6.setText("Back");
         add(jButton6);
-        jButton6.setBounds(40, 500, 61, 23);
+        jButton6.setBounds(40, 500, 80, 23);
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setText("Sign Up For A Class");
