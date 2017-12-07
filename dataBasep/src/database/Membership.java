@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD:dataBasep/src/database/Membership.java
 package project2n;
+=======
+>>>>>>> parent of 258eb96... Merge branch 'master' of https://github.com/HalaSalameh/Gym-New:dataBasep/src/Membership.java
 
 /**
  *

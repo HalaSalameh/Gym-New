@@ -189,6 +189,14 @@ public class NewCustomer extends javax.swing.JPanel {
         DataBase.changePanel(temp); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DataBase.exitFrame();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+>>>>>>> parent of 258eb96... Merge branch 'master' of https://github.com/HalaSalameh/Gym-New
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

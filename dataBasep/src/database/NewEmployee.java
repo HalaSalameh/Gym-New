@@ -205,6 +205,14 @@ public class NewEmployee extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        DataBase.exitFrame();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+>>>>>>> parent of 258eb96... Merge branch 'master' of https://github.com/HalaSalameh/Gym-New
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
