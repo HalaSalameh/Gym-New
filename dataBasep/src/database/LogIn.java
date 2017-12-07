@@ -38,6 +38,9 @@ public class LogIn extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(java.awt.Color.white);
+        setMaximumSize(new java.awt.Dimension(32767, 32766));
+        setMinimumSize(new java.awt.Dimension(32767, 32767));
+        setPreferredSize(new java.awt.Dimension(789, 495));
         setLayout(null);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));

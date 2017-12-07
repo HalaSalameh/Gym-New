@@ -16,24 +16,24 @@ public class DataBase {
             JPanel logIn  = new LogIn();
 
             f=new JFrame();
+
             f.add(logIn);   
             f.pack();
-            f.setSize(800,500);
-             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
             int height = screenSize.height;
             int width = screenSize.width;
-            f.setSize(width/2, height/2);
-
+            //f.setSize(width/2, height/2);
+            f.setSize(logIn.size());
             f.setLocationRelativeTo(null);
             f.setVisible(true);
     }
     
     public static void changePanel(JPanel panel,int hight,int width)
     {
-        f.removeAll();
-         f.add(panel); 
-         f.setSize(width,hight);
-            
+        f.setContentPane(panel);
+       f.setSize(panel.size());
+            f.invalidate();
+          f.validate();
     }
     
 }
