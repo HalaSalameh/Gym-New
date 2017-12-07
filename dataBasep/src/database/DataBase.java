@@ -1,6 +1,7 @@
 package database;
 
 import java.awt.Frame;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -11,6 +12,7 @@ public class DataBase {
 
     public static void main(String[] args) {
             JPanel logIn  = new LogIn();
+            JFrame f=new JFrame();
             f.add(logIn);
            
             f.pack();

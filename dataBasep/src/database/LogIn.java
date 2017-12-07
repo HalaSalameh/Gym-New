@@ -60,7 +60,7 @@ public class LogIn extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(410, 260, 140, 30);
 
-        jButton1.setBackground(java.awt.Color.orange);
+        jButton1.setBackground(java.awt.Color.lightGray);
         jButton1.setForeground(new java.awt.Color(0, 102, 255));
         jButton1.setText("Log In");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
