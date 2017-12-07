@@ -21,7 +21,9 @@ public class DataBase {
           Frame f  = new Frame();
             JPanel logIn  = new LogIn();
             f.add(logIn);
+           
             f.pack();
+            f.setSize(800,500);
             f.setVisible(true);
     }
     
