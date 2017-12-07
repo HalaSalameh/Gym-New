@@ -5,8 +5,6 @@
  */
 package database;
 
-import javax.swing.JPanel;
-
 /**
  *
  * @author dell
@@ -44,21 +42,11 @@ public class Medical extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Exit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
         add(jButton2);
         jButton2.setBounds(395, 353, 70, 30);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Back ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         add(jButton1);
         jButton1.setBounds(50, 350, 70, 30);
 
@@ -90,15 +78,6 @@ public class Medical extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(460, 160, 330, 262);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       JPanel CustomerPanel = new Customer();
-        DataBase.changePanel(CustomerPanel);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         DataBase.exitFrame();
-    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
