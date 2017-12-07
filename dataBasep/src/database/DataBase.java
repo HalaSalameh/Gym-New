@@ -5,9 +5,12 @@
  */
 package database;
 
+import java.awt.Frame;
+import javax.swing.JPanel;
+
 /**
  *
- * @author dell
+ * @author noorSh & halaS
  */
 public class DataBase {
 
@@ -15,7 +18,11 @@ public class DataBase {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+          Frame f  = new Frame();
+            JPanel logIn  = new LogIn();
+            f.add(logIn);
+            f.pack();
+            f.setVisible(true);
     }
     
 }
