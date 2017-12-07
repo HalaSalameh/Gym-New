@@ -118,23 +118,8 @@ public class Program extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-<<<<<<< HEAD
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-=======
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        JPanel temp = new newProgram();
-        DataBase.changePanel(temp);
-    }//GEN-LAST:event_jButton1ActionPerformed
->>>>>>> parent of 258eb96... Merge branch 'master' of https://github.com/HalaSalameh/Gym-New
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
