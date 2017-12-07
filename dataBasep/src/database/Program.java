@@ -141,9 +141,8 @@ public class Program extends javax.swing.JPanel {
         jButton4.setBounds(160, 520, 210, 40);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        DataBase.exitFrame();
-    }
+
+    
 
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -155,17 +154,22 @@ public class Program extends javax.swing.JPanel {
                                       
 
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        JPanel ProgramPanel = new Program();
         DataBase.changePanel(ProgramPanel);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         JPanel CustomerPanel = new Customer();
         DataBase.changePanel(CustomerPanel);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        DataBase.exitFrame();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
