@@ -5,6 +5,8 @@
  */
 package database;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author dell
@@ -77,11 +79,21 @@ public class NewEmployee extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         add(jButton2);
         jButton2.setBounds(60, 600, 61, 23);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Sign Up");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         add(jButton1);
         jButton1.setBounds(260, 570, 110, 40);
 
@@ -109,14 +121,14 @@ public class NewEmployee extends javax.swing.JPanel {
         add(jLabel10);
         jLabel10.setBounds(60, 410, 100, 17);
         add(jTextField5);
-        jTextField5.setBounds(140, 360, 250, 22);
+        jTextField5.setBounds(140, 360, 250, 20);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText(" Building : ");
         add(jLabel9);
         jLabel9.setBounds(60, 360, 90, 15);
         add(jTextField4);
-        jTextField4.setBounds(350, 310, 140, 22);
+        jTextField4.setBounds(350, 310, 140, 20);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Street : ");
@@ -129,7 +141,7 @@ public class NewEmployee extends javax.swing.JPanel {
             }
         });
         add(jTextField3);
-        jTextField3.setBounds(120, 310, 130, 22);
+        jTextField3.setBounds(120, 310, 130, 20);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("City : ");
@@ -138,7 +150,7 @@ public class NewEmployee extends javax.swing.JPanel {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox3);
-        jComboBox3.setBounds(430, 250, 64, 22);
+        jComboBox3.setBounds(430, 250, 56, 20);
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jComboBox2.setMaximumRowCount(31);
@@ -157,7 +169,7 @@ public class NewEmployee extends javax.swing.JPanel {
         add(jLabel6);
         jLabel6.setBounds(60, 250, 100, 15);
         add(jTextField2);
-        jTextField2.setBounds(120, 190, 310, 22);
+        jTextField2.setBounds(120, 190, 310, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Email : ");
@@ -167,12 +179,12 @@ public class NewEmployee extends javax.swing.JPanel {
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton2.setText("Male");
         add(jRadioButton2);
-        jRadioButton2.setBounds(330, 140, 57, 25);
+        jRadioButton2.setBounds(330, 140, 53, 23);
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton1.setText("Female");
         add(jRadioButton1);
-        jRadioButton1.setBounds(160, 140, 69, 25);
+        jRadioButton1.setBounds(160, 140, 67, 23);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Gender : ");
@@ -210,8 +222,22 @@ public class NewEmployee extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+<<<<<<< HEAD
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JPanel SignUpFinalPanel = new  SignUpFinal();
+        DataBase.changePanel( SignUpFinalPanel);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JPanel temp = new empMainScreen();
+        DataBase.changePanel(temp);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+>>>>>>> 25350c44741a0c3e9a4d174a99628f0a33d51a1a
         DataBase.exitFrame();
     }//GEN-LAST:event_jButton3ActionPerformed
 
