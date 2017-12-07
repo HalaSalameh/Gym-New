@@ -46,6 +46,9 @@ public class Customer extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(32767, 32766));
+        setMinimumSize(new java.awt.Dimension(32767, 32767));
+        setPreferredSize(new java.awt.Dimension(663, 647));
         setLayout(null);
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N

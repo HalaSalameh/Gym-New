@@ -23,6 +23,7 @@ public class DataBase {
             int width = screenSize.width;
             //f.setSize(width/2, height/2);
             f.setSize(logIn.size());
+            System.out.println(logIn.size());
             f.setLocationRelativeTo(null);
             f.setVisible(true);
     }
@@ -30,7 +31,8 @@ public class DataBase {
     public static void changePanel(JPanel panel,int hight,int width)
     {
         f.setContentPane(panel);
-        f.setSize(panel.size());
+        System.out.println(panel.size());
+        f.setSize(panel.preferredSize());
         f.invalidate();
         f.validate();
     }

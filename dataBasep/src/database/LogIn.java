@@ -93,6 +93,7 @@ public class LogIn extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         JPanel customerPanel = new Customer();
+        System.out.println(customerPanel.size());
         DataBase.changePanel(customerPanel, 500, 800);
     }//GEN-LAST:event_jButton1ActionPerformed
 
