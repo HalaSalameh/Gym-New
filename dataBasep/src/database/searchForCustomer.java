@@ -5,6 +5,8 @@
  */
 package database;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author HP
@@ -41,6 +43,7 @@ public class searchForCustomer extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setBackground(java.awt.Color.white);
         setPreferredSize(new java.awt.Dimension(929, 592));
@@ -52,7 +55,7 @@ public class searchForCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField1);
-        jTextField1.setBounds(268, 105, 198, 20);
+        jTextField1.setBounds(268, 105, 198, 22);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("name");
@@ -70,7 +73,7 @@ public class searchForCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField2);
-        jTextField2.setBounds(268, 136, 198, 20);
+        jTextField2.setBounds(268, 136, 198, 22);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +81,7 @@ public class searchForCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField3);
-        jTextField3.setBounds(268, 167, 198, 20);
+        jTextField3.setBounds(268, 167, 198, 22);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("email");
@@ -92,7 +95,7 @@ public class searchForCustomer extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1);
-        jComboBox1.setBounds(270, 200, 56, 20);
+        jComboBox1.setBounds(270, 200, 64, 22);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -135,6 +138,15 @@ public class searchForCustomer extends javax.swing.JPanel {
         add(jButton1);
         jButton1.setBounds(350, 250, 130, 31);
 
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2);
+        jButton2.setBounds(140, 520, 100, 40);
+
         getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
 
@@ -154,9 +166,16 @@ public class searchForCustomer extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        JPanel temp = new empMainScreen();
+        DataBase.changePanel(temp);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
