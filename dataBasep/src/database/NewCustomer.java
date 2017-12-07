@@ -155,6 +155,11 @@ public class NewCustomer extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Exit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         add(jButton2);
         jButton2.setBounds(170, 570, 55, 23);
 
@@ -188,6 +193,11 @@ public class NewCustomer extends javax.swing.JPanel {
         JPanel temp = new empMainScreen();
         DataBase.changePanel(temp); 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DataBase.exitFrame();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
