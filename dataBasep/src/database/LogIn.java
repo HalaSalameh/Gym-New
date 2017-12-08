@@ -5,6 +5,8 @@
  */
 package database;
 
+import java.sql.ResultSet;
+import javax.persistence.EntityManager;
 import javax.swing.JPanel;
 
 /**
@@ -97,10 +99,40 @@ public class LogIn extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        /* EntityManager em = new EntityManager;
+        System.out.println(em.createNamedQuery("findAll")
+    .getResultList());*/
+      
         
-        JPanel customerPanel = new Customer();
-        System.out.println(customerPanel.size());
-        DataBase.changePanel(customerPanel);
+        String userName = jTextField1.getText();
+        String pass = jPasswordField1.getText();
+        System.out.println(userName.substring(0, 3)+"   "+ userName.substring(0, 3).equals("emp"));
+        
+        if (userName.substring(0, 3).equals("emp"))
+        {
+           
+            try {
+                
+                String sql = "SELECT c FROM Coach  WHERE c.password ='"+pass+"'and c.coachId=" + userName.substring(3);
+                System.out.println(sql);
+                DatabaseAPI db = new DatabaseAPI();
+                ResultSet set=db.read(sql);
+               boolean  count = false ; 
+                while(set.next())
+                    count= true;
+                if(count)    
+                {
+                    System.out.println("in ");
+                      JPanel temp = new empMainScreen();
+                       DataBase.changePanel(temp);
+                }
+                
+                
+            }catch (Exception ex){
+                ex.printStackTrace();
+            
+        }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed

@@ -145,7 +145,7 @@ public class Program extends javax.swing.JPanel {
     
 
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         JPanel temp = new newProgram();
         DataBase.changePanel(temp);
@@ -154,7 +154,7 @@ public class Program extends javax.swing.JPanel {
                                       
 
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        JPanel ProgramPanel = new Program();
         DataBase.changePanel(ProgramPanel);
     }                                        
