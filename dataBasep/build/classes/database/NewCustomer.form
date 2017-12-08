@@ -374,8 +374,7 @@
         </Constraint>
       </Constraints>
     </Component>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -422,9 +421,6 @@
         </Constraint>
       </Constraints>
     </Component>
-=======
->>>>>>> c340dfd7188fbf088ffa67fe69ad355fb26aebc2
-=======
->>>>>>> c340dfd7188fbf088ffa67fe69ad355fb26aebc2
+
   </SubComponents>
 </Form>

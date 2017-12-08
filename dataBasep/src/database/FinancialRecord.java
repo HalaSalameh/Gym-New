@@ -94,7 +94,7 @@ public class FinancialRecord extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 10, 470, 648);
+        jLabel1.setBounds(0, 0, 470, 648);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
