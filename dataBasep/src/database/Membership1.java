@@ -76,9 +76,9 @@ public class Membership1 extends javax.swing.JPanel {
         add(jButton1);
         jButton1.setBounds(70, 210, 160, 23);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\big.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel7);
-        jLabel7.setBounds(210, 280, 330, 235);
+        jLabel7.setBounds(210, 250, 330, 230);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Membership Cost Per Month : ");
@@ -105,9 +105,9 @@ public class Membership1 extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(70, 10, 420, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 710, 500);
+        jLabel1.setBounds(0, 0, 660, 500);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

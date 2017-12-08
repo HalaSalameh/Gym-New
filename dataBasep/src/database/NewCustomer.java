@@ -113,19 +113,19 @@ public class NewCustomer extends javax.swing.JPanel {
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton1.setText("Female");
         add(jRadioButton1);
-        jRadioButton1.setBounds(160, 140, 67, 23);
+        jRadioButton1.setBounds(160, 140, 69, 25);
 
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton2.setText("Male");
         add(jRadioButton2);
-        jRadioButton2.setBounds(330, 140, 53, 23);
+        jRadioButton2.setBounds(330, 140, 57, 25);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Email : ");
         add(jLabel5);
         jLabel5.setBounds(60, 190, 80, 15);
         add(jTextField2);
-        jTextField2.setBounds(120, 190, 310, 20);
+        jTextField2.setBounds(120, 190, 310, 22);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Date Of Birth : ");
@@ -146,7 +146,7 @@ public class NewCustomer extends javax.swing.JPanel {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox3);
-        jComboBox3.setBounds(430, 250, 56, 20);
+        jComboBox3.setBounds(430, 250, 64, 22);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("City : ");
@@ -164,24 +164,24 @@ public class NewCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField3);
-        jTextField3.setBounds(120, 310, 130, 20);
+        jTextField3.setBounds(120, 310, 130, 22);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText(" Building : ");
         add(jLabel9);
         jLabel9.setBounds(60, 360, 90, 15);
         add(jTextField4);
-        jTextField4.setBounds(350, 310, 140, 20);
+        jTextField4.setBounds(350, 310, 140, 22);
         add(jTextField5);
-        jTextField5.setBounds(140, 360, 250, 20);
+        jTextField5.setBounds(140, 360, 250, 22);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\big.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel10);
-        jLabel10.setBounds(190, 420, 540, 260);
+        jLabel10.setBounds(260, 370, 540, 260);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dell\\Downloads\\test.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/test.png"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 660, 648);
+        jLabel1.setBounds(0, 0, 630, 610);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
