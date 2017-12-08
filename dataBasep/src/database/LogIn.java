@@ -113,7 +113,60 @@ public class LogIn extends javax.swing.JPanel {
            
             try {
                 
-                String sql = "SELECT c FROM Coach  WHERE c.password ='"+pass+"'and c.coachId=" + userName.substring(3);
+                String sql = "SELECT * FROM Coach as c WHERE c.password ='"+pass+"'and c.coachId=" + userName.substring(3);
+                System.out.println(sql);
+                DatabaseAPI db = new DatabaseAPI();
+                ResultSet set=db.read(sql);
+               boolean  count = false ; 
+                while(set.next())
+                    count= true;
+                if(count)    
+                {
+                    System.out.println("in ");
+                      JPanel temp = new empMainScreen();
+                       DataBase.changePanel(temp);
+                }
+                
+                
+            }catch (Exception ex){
+                ex.printStackTrace();
+            
+        }
+        }
+        else if (userName.substring(0, 3).equals("cus"))
+        {
+           
+            try {
+                
+                String sql = "SELECT * FROM customers as c WHERE c.password ='"+pass+"'and c.customerId=" + userName.substring(3);
+                System.out.println(sql);
+                DatabaseAPI db = new DatabaseAPI();
+                ResultSet set=db.read(sql);
+               boolean  count = false ; 
+                while(set.next())
+                {
+                    System.out.println(set);
+                    count= true;
+                }
+                if(count)    
+                {
+                    System.out.println("in ");
+                      JPanel temp = new Customer();
+                       DataBase.changePanel(temp);
+                }
+                
+                
+            }catch (Exception ex){
+                ex.printStackTrace();
+            
+        }
+        }
+        else if (userName.substring(0, 3).equals("nut"))
+        {
+           
+            try {
+                
+                String sql = "SELECT * FROM nutritionist as c WHERE c.password ='"+pass+"'and c.nutId=" + userName.substring(3);
                 System.out.println(sql);
                 DatabaseAPI db = new DatabaseAPI();
                 ResultSet set=db.read(sql);
