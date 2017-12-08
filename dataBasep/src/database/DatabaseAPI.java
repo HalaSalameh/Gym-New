@@ -22,7 +22,7 @@ public class DatabaseAPI {
 
 	public void startConnection() throws SQLException {
 		 connection = DriverManager.getConnection(
-				"jdbc:mysql://localhost/gym", "root", "admin");
+				"jdbc:mysql://localhost/gym", "admin", "admin");
 
 		
 	}
