@@ -5,7 +5,10 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
 import java.io.Serializable;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -36,7 +39,6 @@ public class Payfor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
-    protected PayforPK payforPK;
     @Column(name = "payDate")
     @Temporal(TemporalType.DATE)
     private Date payDate;
@@ -53,21 +55,7 @@ public class Payfor implements Serializable {
     public Payfor() {
     }
 
-    public Payfor(PayforPK payforPK) {
-        this.payforPK = payforPK;
-    }
-
-    public Payfor(int memId, int cusId) {
-        this.payforPK = new PayforPK(memId, cusId);
-    }
-
-    public PayforPK getPayforPK() {
-        return payforPK;
-    }
-
-    public void setPayforPK(PayforPK payforPK) {
-        this.payforPK = payforPK;
-    }
+    
 
     public Date getPayDate() {
         return payDate;
@@ -101,29 +89,15 @@ public class Payfor implements Serializable {
         this.customers = customers;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (payforPK != null ? payforPK.hashCode() : 0);
-        return hash;
-    }
+    public static void addNewPay(Membership mem, Customers cus, double cost) throws SQLException, ClassNotFoundException {
+		String sql = "insert into memcus values (" + mem.getMemId() + " , " + cus.getCusid() + " , " + cost + " ,'"
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Payfor)) {
-            return false;
-        }
-        Payfor other = (Payfor) object;
-        if ((this.payforPK == null && other.payforPK != null) || (this.payforPK != null && !this.payforPK.equals(other.payforPK))) {
-            return false;
-        }
-        return true;
-    }
+                        + LocalDateTime.now() + " )";
+		DatabaseAPI db = new DatabaseAPI();
+		db.write(sql);
+		
 
-    @Override
-    public String toString() {
-        return "database.Payfor[ payforPK=" + payforPK + " ]";
-    }
+	}
+   
     
 }

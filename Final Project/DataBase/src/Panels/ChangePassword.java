@@ -5,6 +5,11 @@
  */
 package Panels;
 
+import database.User;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author HP
@@ -27,19 +32,22 @@ public class ChangePassword extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        match = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        new2 = new javax.swing.JPasswordField();
+        old = new javax.swing.JPasswordField();
+        new1 = new javax.swing.JPasswordField();
 
         setBackground(java.awt.Color.white);
         setPreferredSize(new java.awt.Dimension(760, 261));
         setLayout(null);
+        add(match);
+        match.setBounds(460, 250, 270, 40);
 
         jLabel1.setText("confirm Password");
         add(jLabel1);
@@ -76,51 +84,72 @@ public class ChangePassword extends javax.swing.JPanel {
         add(jButton2);
         jButton2.setBounds(620, 190, 110, 40);
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        new2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                new2ActionPerformed(evt);
             }
         });
-        add(jPasswordField1);
-        jPasswordField1.setBounds(470, 140, 260, 30);
+        add(new2);
+        new2.setBounds(470, 140, 260, 30);
 
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        old.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                oldActionPerformed(evt);
             }
         });
-        add(jPasswordField2);
-        jPasswordField2.setBounds(470, 60, 260, 30);
+        add(old);
+        old.setBounds(470, 60, 260, 30);
 
-        jPasswordField3.addActionListener(new java.awt.event.ActionListener() {
+        new1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField3ActionPerformed(evt);
+                new1ActionPerformed(evt);
             }
         });
-        add(jPasswordField3);
-        jPasswordField3.setBounds(470, 100, 260, 30);
+        add(new1);
+        new1.setBounds(470, 100, 260, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       System.exit(0);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        if (new1.getText().equals(new2.getText()))
+        {
+            try {
+                if(User.mainUser.setPassword(new1.getText(), old.getText()))
+                {
+                    match.setText("Password Successfully Changed");
+                    
+                }
+                else
+                {
+                    match.setText("Wrong Password!");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ChangePassword.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ChangePassword.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else
+        {
+            match.setText("Passwords Do Not Match!");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void new2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_new2ActionPerformed
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void oldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_oldActionPerformed
 
-    private void jPasswordField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField3ActionPerformed
+    private void new1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField3ActionPerformed
+    }//GEN-LAST:event_new1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -130,8 +159,9 @@ public class ChangePassword extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
+    private javax.swing.JLabel match;
+    private javax.swing.JPasswordField new1;
+    private javax.swing.JPasswordField new2;
+    private javax.swing.JPasswordField old;
     // End of variables declaration//GEN-END:variables
 }

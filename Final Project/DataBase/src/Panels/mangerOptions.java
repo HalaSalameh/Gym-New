@@ -79,7 +79,7 @@ public class mangerOptions extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/Picture111.png"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(590, 410, 399, 240);
+        jLabel2.setBounds(490, 260, 399, 240);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/ضضض.png"))); // NOI18N
         jLabel3.setText("jLabel3");

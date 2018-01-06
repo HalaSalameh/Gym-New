@@ -5,7 +5,9 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -36,7 +38,6 @@ public class Memcus implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
-    protected MemcusPK memcusPK;
     @Column(name = "startDate")
     @Temporal(TemporalType.DATE)
     private Date startDate;
@@ -53,36 +54,27 @@ public class Memcus implements Serializable {
     public Memcus() {
     }
 
-    public Memcus(MemcusPK memcusPK) {
-        this.memcusPK = memcusPK;
-    }
-
-    public Memcus(int memId, int cusId) {
-        this.memcusPK = new MemcusPK(memId, cusId);
-    }
-
-    public MemcusPK getMemcusPK() {
-        return memcusPK;
-    }
-
-    public void setMemcusPK(MemcusPK memcusPK) {
-        this.memcusPK = memcusPK;
-    }
 
     public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Date startDate) throws SQLException, ClassNotFoundException {
         this.startDate = startDate;
+        String sql = "update  memcus set startDate = " + startDate + " where memid = " +this.membership.getMemId()+" and cusid = "+this.customers.getCusid() ;
+        DatabaseAPI db = new DatabaseAPI();
+        db.write(sql);
     }
 
     public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(Date endDate) throws SQLException, ClassNotFoundException {
         this.endDate = endDate;
+        String sql = "update  memcus set endDate = " + startDate + " where memid = " +this.membership.getMemId()+" and cusid = "+this.customers.getCusid() ;
+        DatabaseAPI db = new DatabaseAPI();
+        db.write(sql);
     }
 
     public Membership getMembership() {
@@ -100,30 +92,14 @@ public class Memcus implements Serializable {
     public void setCustomers(Customers customers) {
         this.customers = customers;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (memcusPK != null ? memcusPK.hashCode() : 0);
-        return hash;
+ 
+    public static void add(int cusId,int memId,Date startDate,Date endDate) throws SQLException, ClassNotFoundException
+    {
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "insert into memcus values (null, " +  memId+ "," +cusId+" "+startDate+" , "+endDate+ " )";
+        db.write(sql);
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Memcus)) {
-            return false;
-        }
-        Memcus other = (Memcus) object;
-        if ((this.memcusPK == null && other.memcusPK != null) || (this.memcusPK != null && !this.memcusPK.equals(other.memcusPK))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "database.Memcus[ memcusPK=" + memcusPK + " ]";
-    }
+   
     
 }

@@ -5,7 +5,10 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
+import static database.User_.userId;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -53,11 +56,13 @@ public class Classes implements Serializable {
     @OneToMany(mappedBy = "classId")
     private Collection<Sections> sectionsCollection;
 
-    public Classes() {
-    }
-
-    public Classes(Integer classId) {
-        this.classId = classId;
+    public Classes(int id,int numOfHours , String type,String name,String period) throws SQLException, ClassNotFoundException {
+        this.classId=id;
+        this.className=name;
+        this.classPeriod=period;
+        this.numOfHours=numOfHours;
+        this.type=type;
+       
     }
 
     public Integer getClassId() {
@@ -80,24 +85,33 @@ public class Classes implements Serializable {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(String type) throws SQLException, ClassNotFoundException {
+         this.type = type;
+         DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table classes where classId =  " + this.classId + " set type = " + type;
+         db.write(sql);
     }
 
     public Integer getNumOfHours() {
         return numOfHours;
     }
 
-    public void setNumOfHours(Integer numOfHours) {
+    public void setNumOfHours(Integer numOfHours) throws SQLException, ClassNotFoundException {
         this.numOfHours = numOfHours;
+        DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table classes where classId =  " + this.classId + " set numOfHours = " + numOfHours;
+         db.write(sql);
     }
 
     public String getClassName() {
         return className;
     }
 
-    public void setClassName(String className) {
+    public void setClassName(String className) throws SQLException, ClassNotFoundException {
         this.className = className;
+        DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table classes where classId =  " + this.classId + " set className = " + className;
+         db.write(sql);
     }
 
     @XmlTransient
@@ -132,6 +146,16 @@ public class Classes implements Serializable {
     @Override
     public String toString() {
         return "database.Classes[ classId=" + classId + " ]";
+    }
+    
+    public static void addClass(int numOfHours , String type,String name,String period) throws SQLException, ClassNotFoundException {
+        
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "insert into classes values (null, " +  period+ " ," +type+","+numOfHours+" , "+name+ " )";
+        db.write(sql);
+    }
+
+    public Classes() {
     }
     
 }

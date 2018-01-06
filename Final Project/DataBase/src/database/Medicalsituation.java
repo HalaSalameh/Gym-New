@@ -5,7 +5,11 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
+import static database.Customers_.cusid;
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -78,16 +82,22 @@ public class Medicalsituation implements Serializable {
         return weight;
     }
 
-    public void setWeight(Double weight) {
+    public void setWeight(Double weight) throws SQLException, ClassNotFoundException {
         this.weight = weight;
+        String sql = "update  medicalSituation set weight = " + weight + " where programId = " + this.medicalSituation;
+        DatabaseAPI db = new DatabaseAPI();
+        db.write(sql);
     }
 
     public String getMeasurment() {
         return measurment;
     }
 
-    public void setMeasurment(String measurment) {
+    public void setMeasurment(String measurment) throws SQLException, ClassNotFoundException {
         this.measurment = measurment;
+        String sql = "update  medicalSituation set measurment = " + measurment + " where programId = " + this.medicalSituation;
+        DatabaseAPI db = new DatabaseAPI();
+        db.write(sql);
     }
 
     public Employee getEmpId() {
@@ -129,6 +139,17 @@ public class Medicalsituation implements Serializable {
     @Override
     public String toString() {
         return "database.Medicalsituation[ medicalSituation=" + medicalSituation + " ]";
+    }
+    
+      public static int  addToMedical (Customers cus , Employee emp  ) throws SQLException, ClassNotFoundException
+    {
+    	String sql = " insert into Medicalsituation (cusId, empId) Values  ( " +  cus.getCusid() +" ,"  + emp.getEmpId() +")";
+    	DatabaseAPI db = new DatabaseAPI();
+    	db.write(sql);
+    	String sql2 = "select last_insert_id();";
+    	ResultSet set = db.read(sql2);
+    	return set.getInt(1);
+    	
     }
     
 }

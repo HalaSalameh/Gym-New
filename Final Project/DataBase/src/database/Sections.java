@@ -5,7 +5,9 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -38,6 +40,12 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Sections.findByAge", query = "SELECT s FROM Sections s WHERE s.age = :age")})
 public class Sections implements Serializable {
 
+    @Column(name = "day")
+    private Integer day;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "hour")
+    private Double hour;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,7 +64,6 @@ public class Sections implements Serializable {
     @ManyToMany
     private Collection<Employee> employeeCollection;
     @OneToMany(mappedBy = "sectionId")
-    private Collection<Appointments> appointmentsCollection;
     @JoinColumn(name = "classId", referencedColumnName = "classId")
     @ManyToOne
     private Classes classId;
@@ -64,8 +71,10 @@ public class Sections implements Serializable {
     public Sections() {
     }
 
-    public Sections(Integer sectionId) {
+    public Sections(Integer sectionId,int level ,int age ) {
         this.sectionId = sectionId;
+        this.level=level;
+        this.age=age;
     }
 
     public Integer getSectionId() {
@@ -80,16 +89,22 @@ public class Sections implements Serializable {
         return level;
     }
 
-    public void setLevel(Integer level) {
+    public void setLevel(Integer level) throws SQLException, ClassNotFoundException {
         this.level = level;
+         DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table classes where classId =  " + this.sectionId + " set level = " + level;
+         db.write(sql);
     }
 
     public Integer getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(Integer age) throws SQLException, ClassNotFoundException {
         this.age = age;
+         DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table classes where classId =  " + this.sectionId + " set age = " + age;
+         db.write(sql);
     }
 
     @XmlTransient
@@ -108,15 +123,6 @@ public class Sections implements Serializable {
 
     public void setEmployeeCollection(Collection<Employee> employeeCollection) {
         this.employeeCollection = employeeCollection;
-    }
-
-    @XmlTransient
-    public Collection<Appointments> getAppointmentsCollection() {
-        return appointmentsCollection;
-    }
-
-    public void setAppointmentsCollection(Collection<Appointments> appointmentsCollection) {
-        this.appointmentsCollection = appointmentsCollection;
     }
 
     public Classes getClassId() {
@@ -150,6 +156,29 @@ public class Sections implements Serializable {
     @Override
     public String toString() {
         return "database.Sections[ sectionId=" + sectionId + " ]";
+    }
+    
+     public static void addSection(int classId , int level,int age,int day,double hour) throws SQLException, ClassNotFoundException {
+        
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "insert into sections values (null, " +  classId+ " " +level+" "+age+" "+day+" "+hour + " )";
+        db.write(sql);
+    }
+
+    public Integer getDay() {
+        return day;
+    }
+
+    public void setDay(Integer day) {
+        this.day = day;
+    }
+
+    public Double getHour() {
+        return hour;
+    }
+
+    public void setHour(Double hour) {
+        this.hour = hour;
     }
     
 }

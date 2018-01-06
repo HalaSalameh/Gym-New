@@ -5,7 +5,9 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -72,8 +74,11 @@ public class Membership implements Serializable {
         return memName;
     }
 
-    public void setMemName(String memName) {
+    public void setMemName(String memName) throws SQLException, ClassNotFoundException {
         this.memName = memName;
+        DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table membership where memId =  " + this.memId + " set memName = " +memName;
+         db.write(sql);
     }
 
     @XmlTransient
@@ -118,5 +123,11 @@ public class Membership implements Serializable {
     public String toString() {
         return "database.Membership[ memId=" + memId + " ]";
     }
+    public static void addNewMemType(String name) throws SQLException, ClassNotFoundException {
+		String sql = "INSERT INTO membership values ( null , '" + name + "' );";
+                DatabaseAPI db = new DatabaseAPI();
+                db.write(sql);
+	}
+    
     
 }

@@ -5,7 +5,11 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
+import static database.User_.password;
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -57,23 +61,28 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(Integer empId) {
-        this.empId = empId;
+    public Employee(Integer userId) throws SQLException, ClassNotFoundException {
+        
+        String sql = "select * from employee as u where u.userid =  " + userId ;
+        DatabaseAPI db = new DatabaseAPI();
+        ResultSet set = db.read(sql);
+        this.empId = set.getInt(1);
+        this.rank=set.getInt(2);
     }
 
     public Integer getEmpId() {
         return empId;
     }
 
-    public void setEmpId(Integer empId) {
-        this.empId = empId;
-    }
 
     public Integer getRank() {
         return rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(Integer rank) throws SQLException, ClassNotFoundException {
+         DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table employee where empId =  " + empId + " set rank = " + rank;
+         db.write(sql);
         this.rank = rank;
     }
 
@@ -86,13 +95,7 @@ public class Employee implements Serializable {
         this.sectionsCollection = sectionsCollection;
     }
 
-    public User getUserid() {
-        return userid;
-    }
-
-    public void setUserid(User userid) {
-        this.userid = userid;
-    }
+    
 
     @XmlTransient
     public Collection<Medicalsituation> getMedicalsituationCollection() {
@@ -135,6 +138,17 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         return "database.Employee[ empId=" + empId + " ]";
+    }
+    
+    public static int addEmployee(String rank,int userId) throws SQLException, ClassNotFoundException
+    {
+        DatabaseAPI db = new DatabaseAPI();
+         String sql = "insert into epmloyee values (null, " + rank + " " +userId+" )";
+         db.write(sql);
+        
+        String sql2 = "select last_insert_id();";
+		ResultSet set = db.read(sql2);
+		return set.getInt(1);
     }
     
 }

@@ -5,8 +5,13 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
+import static database.User_.userId;
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -64,20 +69,17 @@ public class Customers implements Serializable {
     public Customers() {
     }
 
-    public Customers(Integer cusid) {
-        this.cusid = cusid;
-    }
+    public Customers(Integer userId) throws SQLException, ClassNotFoundException {
+        String sql = "select * from Custmers as c where c.userId = " + userId;
+        DatabaseAPI db = new DatabaseAPI();
+        ResultSet set = db.read(sql);
+        this.cusid = set.getInt(1);
+        this.programId = new Programs(set.getInt(3));
 
-    public Integer getCusid() {
-        return cusid;
-    }
-
-    public void setCusid(Integer cusid) {
-        this.cusid = cusid;
     }
 
     @XmlTransient
-    public Collection<Sections> getSectionsCollection() {
+    public Collection<Sections> getSectionsCollethisction() {
         return sectionsCollection;
     }
 
@@ -124,8 +126,11 @@ public class Customers implements Serializable {
         return programId;
     }
 
-    public void setProgramId(Programs programId) {
+    public void setProgramId(Programs programId) throws SQLException, ClassNotFoundException {
         this.programId = programId;
+        String sql = "update  customers set programId = " + programId.getProgramId() + " where cusId = " + cusid;
+        DatabaseAPI db = new DatabaseAPI();
+        db.write(sql);
     }
 
     @Override
@@ -152,5 +157,21 @@ public class Customers implements Serializable {
     public String toString() {
         return "database.Customers[ cusid=" + cusid + " ]";
     }
-    
+
+    public static int addCus(String name, boolean gender, String email, Date dateOfBirth, Addresses address,
+            boolean isEmp) throws SQLException, ClassNotFoundException {
+
+        int userId = User.addNewUser(name, gender, email, dateOfBirth, address, isEmp);
+        String sql = "INSERT INTO customers (userId , programId )  Values ( " + userId + " ,null)";
+
+        DatabaseAPI db = new DatabaseAPI();
+        db.write(sql);
+        String sql2 = "select last_insert_id();";
+		ResultSet set = db.read(sql2);
+		return set.getInt(1);
+    }
+
+   public Integer getCusid() {
+		return cusid;
+	}
 }

@@ -5,7 +5,10 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -71,8 +74,11 @@ public class Programs implements Serializable {
         return weeklyTrainingHour;
     }
 
-    public void setWeeklyTrainingHour(Integer weeklyTrainingHour) {
+    public void setWeeklyTrainingHour(Integer weeklyTrainingHour) throws SQLException, ClassNotFoundException {
         this.weeklyTrainingHour = weeklyTrainingHour;
+        DatabaseAPI db = new DatabaseAPI();
+         String sql = "update table programs where programId =  " + this.programId + " set weeklyTrainingHour = " +weeklyTrainingHour;
+         db.write(sql);
     }
 
     public String getFoodType() {
@@ -123,6 +129,16 @@ public class Programs implements Serializable {
     @Override
     public String toString() {
         return "database.Programs[ programId=" + programId + " ]";
+    }
+    
+    public static int newProgram(int training,String type,int id) throws SQLException, ClassNotFoundException
+    {
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "insert into programs values (null, " +  training+ " " +type+" "+id+ " )";
+        db.write(sql);
+        String sql1 = "select LAST_INSERT_ID()" ;
+        ResultSet set = db.read(sql1);
+        return set.getInt(1);
     }
     
 }

@@ -5,7 +5,11 @@
  */
 package database;
 
+import Panels.DatabaseAPI;
+import static database.User_.userId;
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -53,8 +57,15 @@ public class Addresses implements Serializable {
     public Addresses() {
     }
 
-    public Addresses(Integer addressId) {
+    public Addresses(Integer addressId) throws SQLException, ClassNotFoundException {
+        String sql = "select * from Addresses as u where u.addressid =  " + userId ;
+        DatabaseAPI db = new DatabaseAPI();
+        ResultSet set = db.read(sql);
         this.addressId = addressId;
+        this.building=set.getString(2);
+        this.city=set.getString(3);
+        this.street=set.getString(4);
+        
     }
 
     public Integer getAddressId() {

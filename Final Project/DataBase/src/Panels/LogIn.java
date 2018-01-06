@@ -108,97 +108,78 @@ public class LogIn extends javax.swing.JPanel {
         /* EntityManager em = new EntityManager;
         System.out.println(em.createNamedQuery("findAll")
     .getResultList());*/
-      
+
         String userName = jTextField1.getText();
         String pass = jPasswordField1.getText();
-        System.out.println(userName.substring(0, 3)+"   "+ userName.substring(0, 3).equals("emp"));
-        if (userName.length()<3)
-           
-            jLabel5.setText("Invalid Username Or Password"); 
-        else
-        if (userName.substring(0, 3).equals("emp"))
-        {
-           
+        System.out.println(userName.substring(0, 3) + "   " + userName.substring(0, 3).equals("emp"));
+        if (userName.length() < 3) {
+            jLabel5.setText("Invalid Username Or Password");
+        } else if (userName.substring(0, 3).equals("emp")) {
+
             try {
-                
-                String sql = "SELECT userid FROM user as u,employee as c WHERE u.password = '"+pass+"' and c.empId= " + userName.substring(3)+" and c.userid = u.userid";
+
+                String sql = "SELECT u.userid FROM user as u,employee as c WHERE u.password = '" + pass + "' and c.empId= " + userName.substring(3) + " and c.userid = u.userid";
                 System.out.println(sql);
                 DatabaseAPI db = new DatabaseAPI();
-                ResultSet set=db.read(sql);
-               boolean  count = false ; 
-               String rank="";
-                while(set.next())
-                {
-                    count= true;
-                    rank=set.getString(8);
-                }
-                if(count==true)    
-                {
-                     User user=new User();
-                     
-                      System.out.println("in ");
-                      if (rank.equals("1"))
-                      { JPanel temp = new empMainScreen();
-                       DataBase.changePanel(temp)
-                       ;}
-                      else if (rank.equals("2"))
-                      {
-                          JPanel temp = new empMainScreen();
-                          DataBase.changePanel(temp);
-                       
-                      }
-                }
-                else 
-                {   jLabel5.setText("Invalid Username Or Password"); 
+                ResultSet set = db.read(sql);
+              
+
+                if (set.next()) {
+                   
+                    User user = new User(set.getInt(1), pass);
+                    User.mainUser = user;
+                    if (user.getIsEmp()) {
+                        int rank = User.mainUser.getEmp().getRank();
+                        if (rank == 1) {
+                            JPanel ReceptionPanel = new Reception();
+                            DataBase.changePanel(ReceptionPanel);
+                        } else {
+                            JPanel empMainScreenPanel = new empMainScreen();
+                            DataBase.changePanel(empMainScreenPanel);
+
+                        }
+
+                    }
+                } else {
+                    jLabel5.setText("Invalid Username Or Password");
                     System.out.println("1");
-                        
+
                 }
-                
-                
-            }catch (Exception ex){
+
+            } catch (Exception ex) {
                 ex.printStackTrace();
-            
-        }
-        }
-        
-        else if (userName.substring(0, 3).equals("cus"))
-        {
-           
+
+            }
+        } else if (userName.substring(0, 3).equals("cus")) {
+
             try {
-                
-                String sql = "SELECT userid FROM user as u, customers as c WHERE u.password = '"+pass+"' and c.cusId = " + userName.substring(3)+" and c.userid = u.userid";
+
+                String sql = "SELECT u.userid FROM user as u, customers as c WHERE u.password = '" + pass + "' and c.cusId = " + userName.substring(3) + " and c.userid = u.userid";
                 System.out.println(sql);
                 DatabaseAPI db = new DatabaseAPI();
-                ResultSet set=db.read(sql);
-               boolean  count = false ; 
-                while(set.next())
-                {
-                    System.out.println(set);
-                    count= true;
+                ResultSet set = db.read(sql);
+                boolean count = false;
+               if (set.next()) {
+                    User user = new User(set.getInt(1), pass);
+                    User.mainUser = user;
+                    JPanel temp = new Customer();
+                    DataBase.changePanel(temp);
+                   
+                    count = true;
                 }
-                if(count)    
-                {
-                    System.out.println("in ");
-                      JPanel temp = new Customer();
-                       DataBase.changePanel(temp);
+                 else {
+                    jLabel5.setText("Invalid Username Or Password");
                 }
-                else 
-            jLabel5.setText("Invalid Username Or Password"); 
-                
-                
-            }catch (Exception ex){
+
+            } catch (Exception ex) {
                 ex.printStackTrace();
-           
-        }
-            
-        }
-        
-        
-        else
-        {
+
+            }
+
+        } else {
             jLabel5.setText("Invalid username or password!");
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed

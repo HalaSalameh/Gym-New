@@ -6,9 +6,11 @@
 package database;
 
 import Panels.DatabaseAPI;
+import Panels.NewEmployee;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -94,7 +96,20 @@ public class User implements Serializable {
         String sql = "select * from user as u where u.userid =  " + userId + " and u.password  = '" + password + "' ";
         DatabaseAPI db = new DatabaseAPI();
         ResultSet set = db.read(sql);
-
+        this.name=set.getString(2);
+        this.gender=set.getBoolean(4);
+        this.email=set.getString(5);
+        this.dateOfBirth=set.getDate(6);
+        
+        this.addressId= new Addresses(set.getInt(7));
+        this.joinedDate=set.getDate(8);
+        this.isEmp=set.getBoolean(9);
+        
+        if(isEmp)
+            setMainEmp();
+        else 
+            setMainCus();
+        
     }
 
     public Integer getUserId() {
@@ -184,12 +199,12 @@ public class User implements Serializable {
 
     public void setAddressId(Addresses addressId) throws SQLException, ClassNotFoundException {
         this.addressId = addressId;
-        String sql1 = "select * from addresses where addressid =  " + addressId;
+        String sql1 = "select * from addresses where addressid =  " + addressId.getAddressId();
         DatabaseAPI db = new DatabaseAPI();
         ResultSet set = db.read(sql1);
 
         if (set.next()) {
-            String sql = "update table user where userId =  " + userId + " set addressId = " + addressId;
+            String sql = "update table user where userId =  " + userId + " set addressId = " + addressId.getAddressId();
             db.write(sql);
         }
 
@@ -223,5 +238,50 @@ public class User implements Serializable {
     public Boolean getIsEmp() {
         return isEmp;
     }
+    
+    
+ private  Employee mainEmp;
+ private Customers mainCus;
+ 
+ public Customers  getCus  (){
+     return mainCus;
+     
+ }
+ 
+ public Employee getEmp()
+ {
+     return mainEmp;
+ }
+    
+ public void setMainEmp () throws SQLException, ClassNotFoundException
+ {
+     mainEmp = new  Employee(userId);
+ }
+ 
+  public void setMainCus () throws SQLException, ClassNotFoundException
+ {
+     mainCus = new  Customers(userId);
+ }
+ public static int addNewUser(String name, boolean gender, String email, Date dateOfBirth, Addresses address,
+			boolean isEmp) throws SQLException, ClassNotFoundException {
+		String pass = genratePass();
+		String sql = "INSERT INTO user (name , password , gender , email ,DateOfBirth ,AddressId , joindDate , is emp )  Values ( '"
+				+ name + "' , '" + pass + "' ,'" + gender + " ,'" + email + "', " + dateOfBirth + ", "
+				+ address.getAddressId() + ", " + LocalDateTime.now() + " , " + isEmp + ") ";
+		DatabaseAPI db = new DatabaseAPI();
+		db.write(sql);
+		String sql2 = "select last_insert_id();";
+		ResultSet set = db.read(sql2);
+		return set.getInt(1);
+	}
 
+	public static String genratePass() {
+		String pass = "";
+		for (int i = 0; i < 6; i++) {
+			char temp = (char) ((int) (Math.random() * 28 + 55));
+			pass = pass + temp;
+
+		}
+		return pass;
+	}
 }
