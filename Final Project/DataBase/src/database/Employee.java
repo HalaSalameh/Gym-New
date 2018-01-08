@@ -62,27 +62,29 @@ public class Employee implements Serializable {
     }
 
     public Employee(Integer userId) throws SQLException, ClassNotFoundException {
-        
-        String sql = "select * from employee as u where u.userid =  " + userId ;
+
+        String sql = "select * from employee as u where u.userid =  " + userId;
         DatabaseAPI db = new DatabaseAPI();
         ResultSet set = db.read(sql);
-        this.empId = set.getInt(1);
-        this.rank=set.getInt(2);
+        while (set.next()) {
+            this.empId = set.getInt(1);
+            this.rank = set.getInt(2);
+        }
     }
 
     public Integer getEmpId() {
         return empId;
     }
 
-
     public Integer getRank() {
         return rank;
     }
 
     public void setRank(Integer rank) throws SQLException, ClassNotFoundException {
-         DatabaseAPI db = new DatabaseAPI();
-         String sql = "update table employee where empId =  " + empId + " set rank = " + rank;
-         db.write(sql);
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "update table employee where empId =  " + empId + " set rank = " + rank;
+        db.write(sql);
+        
         this.rank = rank;
     }
 
@@ -94,8 +96,6 @@ public class Employee implements Serializable {
     public void setSectionsCollection(Collection<Sections> sectionsCollection) {
         this.sectionsCollection = sectionsCollection;
     }
-
-    
 
     @XmlTransient
     public Collection<Medicalsituation> getMedicalsituationCollection() {
@@ -139,16 +139,31 @@ public class Employee implements Serializable {
     public String toString() {
         return "database.Employee[ empId=" + empId + " ]";
     }
-    
-    public static int addEmployee(String rank,int userId) throws SQLException, ClassNotFoundException
-    {
+
+    public static int addEmployee(String rank, int userId) throws SQLException, ClassNotFoundException {
         DatabaseAPI db = new DatabaseAPI();
-         String sql = "insert into epmloyee values (null, " + rank + " " +userId+" )";
-         db.write(sql);
-        
-        String sql2 = "select last_insert_id();";
-		ResultSet set = db.read(sql2);
-		return set.getInt(1);
+        String sql = "insert into employee values (null, " + rank + " ," + userId + " )";
+       
+        int ide = 0;
+        ide = db.write(sql);
+        System.out.println(ide+"this is the employee id!!!");
+        return ide;
     }
-    
+
+    public static void removeEmployee(int id) throws SQLException, ClassNotFoundException {
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "SELECT u.userid FROM user as u,employee as c WHERE c.empid = " + id + " and c.userid = u.userid";
+        ResultSet set = db.read(sql);
+        int usid = 0;
+        while (set.next()) {
+            usid = set.getInt(1);
+        }
+        String sql2 = "delete from  employee where cusid = " + id;
+        db.write(sql2);
+        String sql3 = "delete from  user where userid = " + usid;
+        db.write(sql3);
+       
+
+    }
+
 }

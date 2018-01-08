@@ -90,6 +90,7 @@ public class Classes implements Serializable {
          DatabaseAPI db = new DatabaseAPI();
          String sql = "update table classes where classId =  " + this.classId + " set type = " + type;
          db.write(sql);
+          
     }
 
     public Integer getNumOfHours() {
@@ -101,6 +102,7 @@ public class Classes implements Serializable {
         DatabaseAPI db = new DatabaseAPI();
          String sql = "update table classes where classId =  " + this.classId + " set numOfHours = " + numOfHours;
          db.write(sql);
+        
     }
 
     public String getClassName() {
@@ -112,6 +114,7 @@ public class Classes implements Serializable {
         DatabaseAPI db = new DatabaseAPI();
          String sql = "update table classes where classId =  " + this.classId + " set className = " + className;
          db.write(sql);
+        
     }
 
     @XmlTransient
@@ -153,6 +156,7 @@ public class Classes implements Serializable {
         DatabaseAPI db = new DatabaseAPI();
         String sql = "insert into classes values (null, " +  period+ " ," +type+","+numOfHours+" , "+name+ " )";
         db.write(sql);
+     
     }
 
     public Classes() {

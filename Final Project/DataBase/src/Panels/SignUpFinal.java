@@ -6,6 +6,8 @@
 package Panels;
 
 import database.DataBase;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,8 +18,19 @@ public class SignUpFinal extends javax.swing.JPanel {
     /**
      * Creates new form SignUpFinal
      */
-    public SignUpFinal() {
+    public SignUpFinal(int id,int userId,boolean emp) throws SQLException, ClassNotFoundException {
         initComponents();
+        String sql = "select password  from user as u where u.userid =  " + userId ;
+        DatabaseAPI db = new DatabaseAPI();
+        ResultSet set = db.read(sql);
+        String pass="";
+        while (set.next())
+            pass=set.getString(1);
+        if (emp==true)
+            name.setText("User Name  : emp"+id);
+        else name.setText("User Name  : cus"+id);
+        passe.setText("Password "+pass);
+        
     }
 
     /**
@@ -29,9 +42,9 @@ public class SignUpFinal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        passe = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -40,19 +53,17 @@ public class SignUpFinal extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(675, 302));
         setLayout(null);
 
+        passe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        add(passe);
+        passe.setBounds(370, 120, 210, 30);
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(-10, 0, 370, 300);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("User Name : ");
-        add(jLabel1);
-        jLabel1.setBounds(370, 60, 190, 30);
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Password : ");
-        add(jLabel3);
-        jLabel3.setBounds(370, 120, 210, 30);
+        name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        add(name);
+        name.setBounds(370, 60, 190, 30);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Print ");
@@ -96,8 +107,8 @@ public class SignUpFinal extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel name;
+    private javax.swing.JLabel passe;
     // End of variables declaration//GEN-END:variables
 }

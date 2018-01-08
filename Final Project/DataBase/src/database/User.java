@@ -94,9 +94,13 @@ public class User implements Serializable {
         this.userId = userId;
         this.password = password;
         String sql = "select * from user as u where u.userid =  " + userId + " and u.password  = '" + password + "' ";
+        System.out.println(sql);
         DatabaseAPI db = new DatabaseAPI();
         ResultSet set = db.read(sql);
-        this.name=set.getString(2);
+        System.out.println(set);
+        while(set.next())
+        { this.name=set.getString(2);
+        System.out.println(set.getString(2));
         this.gender=set.getBoolean(4);
         this.email=set.getString(5);
         this.dateOfBirth=set.getDate(6);
@@ -104,12 +108,12 @@ public class User implements Serializable {
         this.addressId= new Addresses(set.getInt(7));
         this.joinedDate=set.getDate(8);
         this.isEmp=set.getBoolean(9);
-        
+        }
         if(isEmp)
             setMainEmp();
         else 
             setMainCus();
-        
+        System.out.println(this.name+" "+this.gender+" "+this.email+" "+this.dateOfBirth);
     }
 
     public Integer getUserId() {
@@ -138,6 +142,7 @@ public class User implements Serializable {
             this.password = password;
             String sql1 = "update table user where userId =  " + userId + " set dateofBirth = " + dateOfBirth;
             db.write(sql1);
+         
             return true;
         }
         return false;
@@ -155,8 +160,9 @@ public class User implements Serializable {
         this.email = email;
         String sql = "update table user where userId =  " + userId + " set email = " + email;
         DatabaseAPI db = new DatabaseAPI();
-
         db.write(sql);
+    
+
     }
 
     public Date getDateOfBirth() {
@@ -167,8 +173,9 @@ public class User implements Serializable {
         this.dateOfBirth = dateOfBirth;
         String sql = "update table user where userId =  " + userId + " set dateofBirth = " + dateOfBirth;
         DatabaseAPI db = new DatabaseAPI();
-
         db.write(sql);
+         
+
     }
 
     public Date getJoinedDate() {
@@ -206,6 +213,8 @@ public class User implements Serializable {
         if (set.next()) {
             String sql = "update table user where userId =  " + userId + " set addressId = " + addressId.getAddressId();
             db.write(sql);
+          
+
         }
 
     }
@@ -262,17 +271,18 @@ public class User implements Serializable {
  {
      mainCus = new  Customers(userId);
  }
- public static int addNewUser(String name, boolean gender, String email, Date dateOfBirth, Addresses address,
+ public static int addNewUser(String name, boolean gender, String email, java.sql.Date dateOfBirth, Addresses address,
 			boolean isEmp) throws SQLException, ClassNotFoundException {
 		String pass = genratePass();
-		String sql = "INSERT INTO user (name , password , gender , email ,DateOfBirth ,AddressId , joindDate , is emp )  Values ( '"
-				+ name + "' , '" + pass + "' ,'" + gender + " ,'" + email + "', " + dateOfBirth + ", "
-				+ address.getAddressId() + ", " + LocalDateTime.now() + " , " + isEmp + ") ";
+		String sql = "INSERT INTO user (name , password , gender , email ,DateOfBirth ,AddressId , joinedDate , isemp )  Values ( '"
+				+ name + "' , '" + pass + "' ," + gender + " ,'" + email + "', '" + dateOfBirth + "' , "
+				+ address.getAddressId() + ", '" +LocalDateTime.now().toString().substring(0,10) + "' , " + isEmp + ") ";
 		DatabaseAPI db = new DatabaseAPI();
-		db.write(sql);
-		String sql2 = "select last_insert_id();";
-		ResultSet set = db.read(sql2);
-		return set.getInt(1);
+                System.out.println(sql);
+                int ide=0;
+		ide=db.write(sql);
+                System.out.println(sql+" "+ide);
+                return ide;
 	}
 
 	public static String genratePass() {

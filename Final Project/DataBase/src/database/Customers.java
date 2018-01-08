@@ -70,11 +70,13 @@ public class Customers implements Serializable {
     }
 
     public Customers(Integer userId) throws SQLException, ClassNotFoundException {
-        String sql = "select * from Custmers as c where c.userId = " + userId;
+        String sql = "select * from Customers as c where c.userId = " + userId;
         DatabaseAPI db = new DatabaseAPI();
         ResultSet set = db.read(sql);
-        this.cusid = set.getInt(1);
-        this.programId = new Programs(set.getInt(3));
+        if (set.next()) {
+            this.cusid = set.getInt(1);
+            this.programId = new Programs(set.getInt(3));
+        }
 
     }
 
@@ -131,6 +133,7 @@ public class Customers implements Serializable {
         String sql = "update  customers set programId = " + programId.getProgramId() + " where cusId = " + cusid;
         DatabaseAPI db = new DatabaseAPI();
         db.write(sql);
+
     }
 
     @Override
@@ -158,20 +161,33 @@ public class Customers implements Serializable {
         return "database.Customers[ cusid=" + cusid + " ]";
     }
 
-    public static int addCus(String name, boolean gender, String email, Date dateOfBirth, Addresses address,
-            boolean isEmp) throws SQLException, ClassNotFoundException {
+    public static int addCus(int userId, boolean isEmp) throws SQLException, ClassNotFoundException {
 
-        int userId = User.addNewUser(name, gender, email, dateOfBirth, address, isEmp);
         String sql = "INSERT INTO customers (userId , programId )  Values ( " + userId + " ,null)";
 
         DatabaseAPI db = new DatabaseAPI();
-        db.write(sql);
-        String sql2 = "select last_insert_id();";
-		ResultSet set = db.read(sql2);
-		return set.getInt(1);
+        int ide = 0;
+        ide = db.write(sql);
+
+        return ide;
     }
 
-   public Integer getCusid() {
-		return cusid;
-	}
+    public Integer getCusid() {
+        return cusid;
+    }
+
+    public static void removeCustomer(int id) throws SQLException, ClassNotFoundException {
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "SELECT u.userid FROM user as u,customers as c WHERE c.cusid = " + id + " and c.userid = u.userid";
+        ResultSet set = db.read(sql);
+        int usid = 0;
+        while (set.next()) {
+            usid = set.getInt(1);
+        }
+        String sql2 = "delete from  customers where cusid = " + id;
+        db.write(sql2);
+        String sql3 = "delete from  user where userid = " + usid;
+        db.write(sql3);
+
+    }
 }

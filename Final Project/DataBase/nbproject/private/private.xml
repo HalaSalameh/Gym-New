@@ -3,26 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/empMainScreen.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/SignUp.java</file>
+            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/empMainScreen.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/ClassesProgram.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/NewCustomer.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/ChangePassword.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/courseBrowser.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/database/DataBase.java</file>
+            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/SignUpFinal.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/editCustomer.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/LogIn.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/NewEmployee.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/DeleteEmployee.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/Reception.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/Program.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/mangerOptions.java</file>
+            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/NewEmployee.java</file>
+            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/database/Employee.java</file>
+            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/database/User.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/Customer.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/Medical.java</file>
+            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/database/Addresses.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/Membership1.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/editEmployee.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/searchForCustomer.java</file>
-            <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/DatabaseAPI.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/FinancialRecord.java</file>
             <file>file:/C:/Users/dell/Documents/Data%20Base/Final%20Project/DataBase/src/Panels/newProgram.java</file>
         </group>

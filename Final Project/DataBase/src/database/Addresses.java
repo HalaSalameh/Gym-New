@@ -58,14 +58,17 @@ public class Addresses implements Serializable {
     }
 
     public Addresses(Integer addressId) throws SQLException, ClassNotFoundException {
-        String sql = "select * from Addresses as u where u.addressid =  " + userId ;
+        String sql = "select * from Addresses as u where u.addressid =  " + addressId;
         DatabaseAPI db = new DatabaseAPI();
         ResultSet set = db.read(sql);
-        this.addressId = addressId;
-        this.building=set.getString(2);
-        this.city=set.getString(3);
-        this.street=set.getString(4);
+        while (set.next()) {
+            this.addressId = addressId;
+            this.building = set.getString(2);
+            this.city = set.getString(3);
+            this.street = set.getString(4);
+        }
         
+        System.out.println(this.addressId);
     }
 
     public Integer getAddressId() {
@@ -80,24 +83,36 @@ public class Addresses implements Serializable {
         return building;
     }
 
-    public void setBuilding(String building) {
+    public void setBuilding(String building) throws SQLException, ClassNotFoundException {
         this.building = building;
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "update table programs where addressid =  " + this.addressId + " set building = " + building;
+        db.write(sql);
+     
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setCity(String city) throws SQLException, ClassNotFoundException {
         this.city = city;
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "update table programs where addressid =  " + this.addressId + " set city = " + city;
+        db.write(sql);
+        
     }
 
     public String getStreet() {
         return street;
     }
 
-    public void setStreet(String street) {
+    public void setStreet(String street) throws SQLException, ClassNotFoundException {
         this.street = street;
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "update table programs where addressid =  " + this.addressId + " set street = " + street;
+        db.write(sql);
+    
     }
 
     @XmlTransient
@@ -131,7 +146,15 @@ public class Addresses implements Serializable {
 
     @Override
     public String toString() {
-        return "database.Addresses[ addressId=" + addressId + " ]";
+        return this.city + " / " + this.street + " / " + this.building + "/ " + this.street;
     }
-    
+
+    public static int addAddress(String city, String street, String building) throws SQLException, ClassNotFoundException {
+        DatabaseAPI db = new DatabaseAPI();
+        String sql = "insert into Addresses values (null, '" + building + "' , '" + city + "' , '" + street + "' )";
+        System.out.println(sql);
+        int f=db.write(sql); 
+        return f;
+    }
+
 }

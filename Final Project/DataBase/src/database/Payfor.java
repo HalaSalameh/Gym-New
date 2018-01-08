@@ -95,6 +95,8 @@ public class Payfor implements Serializable {
                         + LocalDateTime.now() + " )";
 		DatabaseAPI db = new DatabaseAPI();
 		db.write(sql);
+                
+
 		
 
 	}

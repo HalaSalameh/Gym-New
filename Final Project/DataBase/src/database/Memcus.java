@@ -75,6 +75,7 @@ public class Memcus implements Serializable {
         String sql = "update  memcus set endDate = " + startDate + " where memid = " +this.membership.getMemId()+" and cusid = "+this.customers.getCusid() ;
         DatabaseAPI db = new DatabaseAPI();
         db.write(sql);
+        
     }
 
     public Membership getMembership() {
@@ -98,6 +99,7 @@ public class Memcus implements Serializable {
         DatabaseAPI db = new DatabaseAPI();
         String sql = "insert into memcus values (null, " +  memId+ "," +cusId+" "+startDate+" , "+endDate+ " )";
         db.write(sql);
+        
     }
 
    

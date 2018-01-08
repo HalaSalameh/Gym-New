@@ -78,7 +78,9 @@ public class Programs implements Serializable {
         this.weeklyTrainingHour = weeklyTrainingHour;
         DatabaseAPI db = new DatabaseAPI();
          String sql = "update table programs where programId =  " + this.programId + " set weeklyTrainingHour = " +weeklyTrainingHour;
-         db.write(sql);
+         db.write(sql);            
+      
+
     }
 
     public String getFoodType() {
@@ -135,10 +137,9 @@ public class Programs implements Serializable {
     {
         DatabaseAPI db = new DatabaseAPI();
         String sql = "insert into programs values (null, " +  training+ " " +type+" "+id+ " )";
-        db.write(sql);
-        String sql1 = "select LAST_INSERT_ID()" ;
-        ResultSet set = db.read(sql1);
-        return set.getInt(1);
+        int ide=0;
+        ide=db.write(sql);
+        return ide;
     }
     
 }

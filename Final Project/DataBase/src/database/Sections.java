@@ -94,6 +94,8 @@ public class Sections implements Serializable {
          DatabaseAPI db = new DatabaseAPI();
          String sql = "update table classes where classId =  " + this.sectionId + " set level = " + level;
          db.write(sql);
+         
+
     }
 
     public Integer getAge() {
@@ -105,6 +107,8 @@ public class Sections implements Serializable {
          DatabaseAPI db = new DatabaseAPI();
          String sql = "update table classes where classId =  " + this.sectionId + " set age = " + age;
          db.write(sql);
+         
+
     }
 
     @XmlTransient
@@ -162,7 +166,9 @@ public class Sections implements Serializable {
         
         DatabaseAPI db = new DatabaseAPI();
         String sql = "insert into sections values (null, " +  classId+ " " +level+" "+age+" "+day+" "+hour + " )";
-        db.write(sql);
+        db.write(sql);           
+     
+
     }
 
     public Integer getDay() {

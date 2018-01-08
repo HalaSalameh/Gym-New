@@ -25,10 +25,12 @@ public class Reception extends javax.swing.JPanel {
            
                 DatabaseAPI db = new DatabaseAPI();
                 ResultSet set=db.read(sql);
+       
               DefaultTableModel model=(DefaultTableModel) cus.getModel();
                 while(set.next())
                 {
-                    model.addRow(new Object[]{set.getString(2),set.getString(4),set.getString(5),set.getString(6),set.getString(8)});
+                    System.out.println(sql);
+                    //model.addRow(new Object[]{set.getString(2),set.getString(4),set.getString(5),set.getString(6),set.getString(8)});
                 }   
     }
 

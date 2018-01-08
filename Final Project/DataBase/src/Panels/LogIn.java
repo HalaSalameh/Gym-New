@@ -120,7 +120,9 @@ public class LogIn extends javax.swing.JPanel {
 
                 String sql = "SELECT u.userid FROM user as u,employee as c WHERE u.password = '" + pass + "' and c.empId= " + userName.substring(3) + " and c.userid = u.userid";
                 System.out.println(sql);
+              
                 DatabaseAPI db = new DatabaseAPI();
+                  System.out.println("here?");
                 ResultSet set = db.read(sql);
               
 
@@ -157,6 +159,7 @@ public class LogIn extends javax.swing.JPanel {
                 String sql = "SELECT u.userid FROM user as u, customers as c WHERE u.password = '" + pass + "' and c.cusId = " + userName.substring(3) + " and c.userid = u.userid";
                 System.out.println(sql);
                 DatabaseAPI db = new DatabaseAPI();
+                System.out.println("here?");
                 ResultSet set = db.read(sql);
                 boolean count = false;
                if (set.next()) {

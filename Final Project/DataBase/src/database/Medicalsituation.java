@@ -87,6 +87,7 @@ public class Medicalsituation implements Serializable {
         String sql = "update  medicalSituation set weight = " + weight + " where programId = " + this.medicalSituation;
         DatabaseAPI db = new DatabaseAPI();
         db.write(sql);
+
     }
 
     public String getMeasurment() {
@@ -98,6 +99,7 @@ public class Medicalsituation implements Serializable {
         String sql = "update  medicalSituation set measurment = " + measurment + " where programId = " + this.medicalSituation;
         DatabaseAPI db = new DatabaseAPI();
         db.write(sql);
+
     }
 
     public Employee getEmpId() {
@@ -140,16 +142,15 @@ public class Medicalsituation implements Serializable {
     public String toString() {
         return "database.Medicalsituation[ medicalSituation=" + medicalSituation + " ]";
     }
-    
-      public static int  addToMedical (Customers cus , Employee emp  ) throws SQLException, ClassNotFoundException
-    {
-    	String sql = " insert into Medicalsituation (cusId, empId) Values  ( " +  cus.getCusid() +" ,"  + emp.getEmpId() +")";
-    	DatabaseAPI db = new DatabaseAPI();
-    	db.write(sql);
-    	String sql2 = "select last_insert_id();";
-    	ResultSet set = db.read(sql2);
-    	return set.getInt(1);
-    	
+
+    public static int addToMedical(Customers cus, Employee emp) throws SQLException, ClassNotFoundException {
+        String sql = " insert into Medicalsituation (cusId, empId) Values  ( " + cus.getCusid() + " ," + emp.getEmpId() + ")";
+        DatabaseAPI db = new DatabaseAPI();
+         int ide = 0;
+        ide=db.write(sql);
+        
+        return ide;
+
     }
-    
+
 }

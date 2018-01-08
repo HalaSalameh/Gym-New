@@ -13,39 +13,46 @@ import java.sql.Statement;
 
 public class DatabaseAPI {
 
-	public Connection connection;
+    public Connection connection;
 
-	public DatabaseAPI() throws SQLException, ClassNotFoundException {
-		// Load the JDBC driver
-		Class.forName("com.mysql.jdbc.Driver");
-	}
+    public DatabaseAPI() throws SQLException, ClassNotFoundException {
 
-	public void startConnection() throws SQLException {
-		 connection = DriverManager.getConnection(
-				"jdbc:mysql://localhost/newGym", "root", "root");
+        System.out.println("6ieb here?");
+        // Load the JDBC driver
+        Class.forName("com.mysql.jdbc.Driver");
+    }
 
-		
-	}
+    public void startConnection() throws SQLException {
 
-	public ResultSet read(String sql) throws SQLException {
-		startConnection();
-		Statement statement = connection.createStatement();
+        connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost/newGym", "root", "root");
 
-		// Execute a statement
-		ResultSet resultSet = statement.executeQuery(sql);
-		
-		return resultSet;
-	}
-	
-	public int write(String sql) throws SQLException{
-		startConnection();
-		Statement statement = connection.createStatement();
-		
-		int x = statement.executeUpdate(sql);
-		connection.close();
-		connection = null;
-		return x;
-	}
+    }
 
-	
+    public ResultSet read(String sql) throws SQLException {
+        startConnection();
+        Statement statement = connection.createStatement();
+
+        // Execute a statement
+        ResultSet resultSet = statement.executeQuery(sql);
+        System.out.println(sql);
+        return resultSet;
+    }
+
+    public int write(String sql) throws SQLException {
+        startConnection();
+        Statement statement = connection.createStatement();
+
+        int x = statement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+        ResultSet rs = statement.getGeneratedKeys();
+        if (rs.next()) {
+            x = rs.getInt(1);
+        }
+        connection.close();
+        connection = null;
+        return x;
+    }
+
+   
+
 }

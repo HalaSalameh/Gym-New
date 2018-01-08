@@ -5,20 +5,42 @@
  */
 package Panels;
 
+import database.Addresses;
+import database.Customers;
 import database.DataBase;
+import database.Employee;
+import database.User;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 /**
  *
  * @author dell
  */
 public class NewCustomer extends javax.swing.JPanel {
-
+  JDatePickerImpl datePicker;
     /**
      * Creates new form NewCustomer
      */
     public NewCustomer() {
         initComponents();
+        UtilDateModel model = new UtilDateModel();
+        Properties p = new Properties();
+        p.put("text.today", "Today");
+        p.put("text.month", "Month");
+        p.put("text.year", "Year");
+        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
+        datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+        datePicker.setBounds(180, 250, 200, 27);
+        
+        add(datePicker);
     }
 
     /**
@@ -30,27 +52,25 @@ public class NewCustomer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        gender = new javax.swing.ButtonGroup();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        city = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        street = new javax.swing.JTextField();
+        building = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -98,56 +118,42 @@ public class NewCustomer extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(60, 90, 60, 30);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameActionPerformed(evt);
             }
         });
-        add(jTextField1);
-        jTextField1.setBounds(120, 100, 310, 20);
+        add(name);
+        name.setBounds(120, 100, 310, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Gender : ");
         add(jLabel4);
         jLabel4.setBounds(60, 140, 80, 20);
 
+        gender.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton1.setText("Female");
         add(jRadioButton1);
-        jRadioButton1.setBounds(160, 140, 69, 25);
+        jRadioButton1.setBounds(160, 140, 67, 23);
 
+        gender.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jRadioButton2.setText("Male");
         add(jRadioButton2);
-        jRadioButton2.setBounds(330, 140, 57, 25);
+        jRadioButton2.setBounds(330, 140, 53, 23);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Email : ");
         add(jLabel5);
         jLabel5.setBounds(60, 190, 80, 15);
-        add(jTextField2);
-        jTextField2.setBounds(120, 190, 310, 22);
+        add(email);
+        email.setBounds(120, 190, 310, 20);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Date Of Birth : ");
         add(jLabel6);
         jLabel6.setBounds(60, 250, 100, 15);
-
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jComboBox1.setMaximumRowCount(12);
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
-        add(jComboBox1);
-        jComboBox1.setBounds(180, 250, 100, 21);
-
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jComboBox2.setMaximumRowCount(31);
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        add(jComboBox2);
-        jComboBox2.setBounds(330, 250, 42, 21);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox3);
-        jComboBox3.setBounds(430, 250, 64, 22);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("City : ");
@@ -159,22 +165,22 @@ public class NewCustomer extends javax.swing.JPanel {
         add(jLabel8);
         jLabel8.setBounds(290, 310, 60, 15);
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                cityActionPerformed(evt);
             }
         });
-        add(jTextField3);
-        jTextField3.setBounds(120, 310, 130, 22);
+        add(city);
+        city.setBounds(120, 310, 130, 20);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText(" Building : ");
         add(jLabel9);
         jLabel9.setBounds(60, 360, 90, 15);
-        add(jTextField4);
-        jTextField4.setBounds(350, 310, 140, 22);
-        add(jTextField5);
-        jTextField5.setBounds(140, 360, 250, 22);
+        add(street);
+        street.setBounds(350, 310, 140, 20);
+        add(building);
+        building.setBounds(140, 360, 250, 20);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/database/big.png"))); // NOI18N
         add(jLabel10);
@@ -185,17 +191,48 @@ public class NewCustomer extends javax.swing.JPanel {
         jLabel1.setBounds(0, 0, 630, 610);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_cityActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nameActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        JPanel SignUpFinalPanel = new SignUpFinal();
-        DataBase.changePanel(SignUpFinalPanel);
+          try {                                         
+            int empId=0;
+            int userId=0;
+            try {String name1 = name.getText();
+            boolean gender = false;
+            if( jRadioButton1.isSelected() || jRadioButton2.isSelected())
+                gender = jRadioButton1.isSelected();
+            String email1 = email.getText();
+            String city1 = city.getText();
+            String street1 = street.getText();
+            
+            String Building1 = building.getText();
+            
+            
+            int addressId = Addresses.addAddress (city1,street1,Building1);
+            
+           java.sql.Date DOB=new java.sql.Date(((Date)datePicker.getModel().getValue()).getTime());
+            
+            userId  = User.addNewUser (name1,gender,email1,DOB ,new Addresses(addressId),true);
+            empId=Customers.addCus(userId,false);
+            } catch (SQLException ex) {
+                Logger.getLogger(NewEmployee.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewEmployee.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            JPanel SignUpFinalPanel = new SignUpFinal(empId,userId,false);
+            DataBase.changePanel(SignUpFinalPanel);
+        } catch (SQLException ex) {
+            Logger.getLogger(NewEmployee.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewEmployee.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -209,12 +246,13 @@ public class NewCustomer extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField building;
+    private javax.swing.JTextField city;
+    private javax.swing.JTextField email;
+    private javax.swing.ButtonGroup gender;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -227,10 +265,7 @@ public class NewCustomer extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField street;
     // End of variables declaration//GEN-END:variables
 }

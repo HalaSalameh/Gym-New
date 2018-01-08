@@ -6,6 +6,7 @@
 package Panels;
 
 import database.DataBase;
+import database.User;
 import javax.swing.JPanel;
 
 /**
@@ -18,7 +19,20 @@ public class Customer extends javax.swing.JPanel {
      * Creates new form Customer
      */
     public Customer() {
+
         initComponents();
+        jLabel5.setText("Name :" + User.mainUser.getName());
+        jLabel8.setText("Address :" + User.mainUser.getAddressId().toString());
+        if (User.mainUser.getGender()) {
+            jLabel6.setText("Gender :Female");
+        } else {
+            jLabel6.setText("Gender :Male");
+        }
+        jLabel7.setText("Date Of Birth :" + User.mainUser.getDateOfBirth());
+        jLabel5.setText("Name :" + User.mainUser.getName());
+        jLabel3.setText("Email :" + User.mainUser.getEmail());
+        jLabel9.setText("Join Date :" + User.mainUser.getJoinedDate());
+
     }
 
     /**
@@ -197,19 +211,19 @@ public class Customer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-         JPanel editCustomerPanel = new editCustomer();
+        JPanel editCustomerPanel = new editCustomer();
         DataBase.changePanel(editCustomerPanel);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        
-         JPanel LogInPanel = new LogIn();
+
+        JPanel LogInPanel = new LogIn();
         DataBase.changePanel(LogInPanel);
 
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       
+
         DataBase.exitFrame();
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -225,7 +239,7 @@ public class Customer extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
-       JPanel MembershipPanel = new Membership1();
+        JPanel MembershipPanel = new Membership1();
         DataBase.changePanel(MembershipPanel);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -235,7 +249,7 @@ public class Customer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       JPanel ChangePasswordPanel = new ChangePassword();
+        JPanel ChangePasswordPanel = new ChangePassword();
         DataBase.changePanel(ChangePasswordPanel);
     }//GEN-LAST:event_jButton9ActionPerformed
 
